@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="Xforce Ryan" />
+        <meta name="generator" content="Xforce Ryan" />
+        <title>Hack Chat</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel = "icon" href ="{{ url_for('static', filename='images/anonymous.png')}}" type = "image/png">
+
+  
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+        </style>
+        <!-- Custom styles for this template -->
+        <link href="{{ url_for('static', filename='css/cover.css')}}" rel="stylesheet" />
+        <link href="{{ url_for('static', filename='css/notie.css')}}" rel="stylesheet" />
+    </head>
+    <body class="overflow-auto" style = "max-height: 100vh;">
+        <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+            <main role="main" class="inner cover">
+                <h2 class="cover-heading mb-4">Chat Room - <span id="room-name"></span></h2>
+                <div class = "main-class mb-5" style = "">
+                    <div class = "pl-3" style="list-style-type: none;" id="messages">
+                        {% for l in data%}
+                        <p class = ""><b>{{l.user}}</b> : {{l.message}} <span class="time-span">{{l.time}}</span></p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </main>
+            <div class="pt-3">        	
+            </div>
+
+            <nav class="navbar fixed-bottom navbar-dark search-padding">
+                <div class="input-group">
+	              <input type="search" placeholder="Whats On your Mind ?" aria-describedby="button-addon1" class="form-control border-0 bg-light " id="mymessage" autofocus>
+	              <div class="input-group-append">
+	                <button id="button-addon1" type="submit" class="btn btn-link" style = "color:white;" ><i class="fa fa-paper-plane"></i></button>
+	              </div>
+	            </div>
+	            <!-- https://bootstrapious.com/p/bootstrap-search-bar -->
+            </nav>
+        </div>
+    </body>
+    <script src="{{url_for('static',filename = 'js/socket-io-2.3.0.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js/jquery-351.min.js')}}"></script>
+    <script src="{{url_for('static',filename = 'js/notie.js')}}"></script>
+    <script type="text/javascript" charset="utf-8" src="{{ url_for('static' , filename= 'js/function.js')}}"></script>
+</html>

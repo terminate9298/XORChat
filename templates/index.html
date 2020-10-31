@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Xforce Ryan" />
+    <meta name="generator" content="Xforce Ryan" />
+    <link rel = "icon" href ="{{ url_for('static', filename='images/anonymous.png')}}" type = "image/png">
+    <title>Hack Chat</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                    font-size: 3.5rem;
+                }
+            }
+    </style>
+        <!-- Custom styles for this template -->
+    <link href="{{ url_for('static', filename='css/cover.css')}}" rel="stylesheet" />
+  </head> 
+  <body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+  <header class="masthead mb-auto">
+    <div class="inner">
+      <h3 class="masthead-brand"><a href="{{ url_for('main')}}">XOR Chat</a></h3>
+      <nav class="nav nav-masthead justify-content-center">
+        <a class="nav-link" href="{{ url_for('chat' , room= 'main')}}">Main Room</a>
+        <a class="nav-link" href="https://t.me/xforce_ryan">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main role="main" class="inner cover">
+    <!-- <h2 class="cover-heading">Chat Easily Chat Anonymously</h2> -->
+    <img src="{{ url_for('static' , filename = 'images/main-logo.png')}}" alt="Main Logo" height="250px" class="mt-5">
+    <div class="mt-5 index-para">Welcome to XOR Chat, a Minimal, Distraction-free , Anonymous chat application. Chat anyone online without any Registration or Login. Just type your name and chat anyone on Public Rooms or Create your own Private Room. There are no Room lists, so a secret room can be used for private discussions. We dont save any Details Of user Other than Provided Name. 
+
+      </div>
+    <div class="mt-4 index-para">
+      If you wanted your Room name to be 'your-room': <br>https://xorchat.herokuapp.com/your-room/<br>Or type your Room Private Key below.
+      <!-- <a href="#" class="btn btn-lg btn-secondary">Learn more</a> -->
+    </div>
+    <div class="mt-4 index-para">
+      Here is the List of Some Public Room Links Already Created for You...
+      <!-- <a href="#" class="btn btn-lg btn-secondary">Learn more</a> -->
+      <ul style = "list-style-type: none;" class="mt-2">
+          <li><a href="{{ url_for('chat' , room= 'science')}}">Science</a></li>
+          <li><a href="{{ url_for('chat' , room= 'programming')}}">Programming</a></li>
+          <li><a href="{{ url_for('chat' , room= 'games')}}">Games</a></li>
+          <li><a href="{{ url_for('chat' , room= 'india')}}">India</a></li>
+      </ul>
+    </div>
+  </main>
+
+  <div class="mastfoot mt-auto mb-5">
+    <div class="inner pb-5">
+      <p>Made with Flask, SocketIO, Heroku and &#128147  by <a href="https://cv.kaus98.ml">Kaus98</a></p>
+    </div>
+  </div>
+  <div class="my-1">   
+  </div>
+    <nav class="navbar fixed-bottom navbar-dark search-padding">
+                <div class="input-group">
+                <input type="text" placeholder="Enter Your Room Key to Join or Create New Room .." aria-describedby="button-addon1" class="form-control border-0 bg-light " id="myroom" autofocus>
+                <div class="input-group-append">
+                  <button id="button-addon1" type="submit" class="btn btn-link" style = 'color:white;' ><i class="fa fa-paper-plane"></i></button>
+                </div>
+              </div>
+              <!-- https://bootstrapious.com/p/bootstrap-search-bar -->
+            </nav>
+</div>
+<script src="{{url_for('static',filename = 'js/jquery-351.min.js')}}"></script>
+<script type="text/javascript" charset="utf-8" src="{{ url_for('static' , filename= 'js/main.js')}}"></script>
+</body>
+</html>
